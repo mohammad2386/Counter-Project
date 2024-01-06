@@ -1,0 +1,80 @@
+//counter.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>counter</title>
+    <link rel="stylesheet" href="./counter.css">
+</head>
+<body>
+    <div id="counter">
+        <p>0</p>
+        <p></p>
+        <div id="buttons">
+            <button onclick="incr()">+</button>
+            <button onclick="decr()">-</button>
+            <button onclick="reset()">Reset</button>
+        </div>
+    </div>
+
+    <script src="./counter.js"></script>
+</body>
+</html>
+//counter.css
+*
+{
+    box-sizing:border-box:
+}
+body
+{
+   background-color: azure;
+   display: flex;
+   justify-content: center;
+   align-items:center;
+   height: 100vh;
+
+}
+#counter
+{
+ height: 200px;
+ width: 200px;
+ background-color: white;
+ box-shadow: 5px 5px black;
+ padding: 0px;
+ display: flex;
+ flex-direction: cloumn;
+ justify-content: center;
+ align-items: center;
+}
+//counter.js
+const para = document.getElementByTagName('p')
+let count = 0;
+function incr ()
+{
+
+    count++
+    para[0].textContent = count
+    para[1].textContent = "incremented"
+
+}
+function decr ()
+{
+    if (count > 0)
+    {
+     count--
+     para[0].textContent = count
+     para[1].textContent = "decremented"
+    }
+    else
+    {
+        alert("don't decrease than zerooo")
+        }
+}
+function reset ()
+{
+    count = 0;
+    para[0].textContent = count
+    para[1].textContent = ""
+}
+</body>
